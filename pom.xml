@@ -15,5 +15,8 @@
         <module>supermall-order</module>
         <module>supermall-product</module>
         <module>supermall-ware</module>
+        <module>renren-fast</module>
+        <module>renren-generator</module>
+        <module>supermall-common</module>
     </modules>
 </project>
