@@ -10,3 +10,16 @@ spring:
           uri: https://www.nba.com
           predicates:
             - Query=url, nba
+        - id: product_route
+          uri: lb://supermall-product
+          predicates:
+            - Path=/api/product/**
+          filters:
+            - RewritePath=/api/(?<segment>.*),/$\{segment}
+        ## Front-END, /api
+        - id: admin_route
+          uri: lb://renren-fast
+          predicates:
+            - Path=/api/**
+          filters:
+            - RewritePath=/api/(?<segment>.*),/renren-fast/$\{segment}

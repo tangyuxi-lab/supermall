@@ -47,6 +47,14 @@ public class CategoryServiceImpl extends ServiceImpl<CategoryDao, CategoryEntity
         return level1Menus;
     }
 
+    @Override
+    public void removeMenuByIds(List<Long> asList) {
+        //Todo Check this menu is referenced by other place
+
+        //Logic delete
+        baseMapper.deleteBatchIds(asList);
+    }
+
     private List<CategoryEntity> getChildren(CategoryEntity root, List<CategoryEntity> all) {
         List<CategoryEntity> collect = all.stream().filter(categoryEntity -> {
             return categoryEntity.getParentCid() == root.getCatId();
