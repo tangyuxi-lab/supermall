@@ -1,0 +1,17 @@
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+    alicloud:
+      access-key: LTAI5tQfto9t8P7adt2c7SSb
+      secret-key: vlqiplhVLtLY2p4mP0vqIjio16IY8F
+      oss:
+        endpoint: oss-us-east-1.aliyuncs.com
+        bucket: supermall-yuxitang
+  application:
+    name: supermall-third-party
+server:
+  port: 30000
+
+
